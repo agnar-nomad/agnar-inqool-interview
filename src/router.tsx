@@ -1,12 +1,8 @@
-import {
-  createBrowserRouter,
-} from "react-router-dom";
-import Root from "./components/common/layout";
-import ErrorPage from "./components/common/ErrorPage";
-import HomePage from '@/pages/home'
-import AboutPage from '@/pages/about'
-
-
+import { createBrowserRouter } from "react-router-dom";
+import Root from "@/components/common/RootLayout";
+import ErrorPage from "@/components/common/ErrorPage";
+import UsersPage from '@/pages/users'
+import AnimalsPage from '@/pages/animals'
 
 const router = createBrowserRouter([
   {
@@ -16,12 +12,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HomePage />,
+        element: <UsersPage />,
         index: true,
       },
       {
         path: "/about",
-        element: <AboutPage />,
+        element: <AnimalsPage />,
       },
     ]
   },
