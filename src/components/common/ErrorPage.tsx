@@ -7,7 +7,8 @@ export default function ErrorPage() {
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-4 text-left">
-      <h1>Oops</h1>
+      <h1 className='text-2xl'>Oops, sorry!</h1>
+      <p className='text-xl'>Something went wrong.</p>
       <p className="font-mono">
         <span className="mr-2">{error?.status}</span>
         <i>{error?.statusText || error?.message}</i>
