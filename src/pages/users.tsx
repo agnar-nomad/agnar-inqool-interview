@@ -1,44 +1,38 @@
-import { User } from "@/types/entities"
-import axios from 'axios'
-// import { useQueryClient } from "@tanstack/react-query"
 import { useQuery } from "@tanstack/react-query"
-import { inqoolEndpoint } from "@/lib/config"
 import UsersTable from "@/components/UsersTable"
-
+import { getUsers } from "@/lib/api"
+import { Loader } from "lucide-react";
 
 
 export default function UsersPage() {
 
-  // const queryClient = useQueryClient()
-
-  const { data, error, isFetching, status } = useQuery({
+  const { data: userData, error, isFetching, status } = useQuery({
     queryKey: ['users'],
-    queryFn: async (): Promise<Array<User>> => {
-      const { data } = await axios.get(`${inqoolEndpoint}/users`)
-      return data
-    },
+    queryFn: getUsers,
     staleTime: 10 * 60 * 1000,
   })
 
   console.log("status", status);
 
-
-  if (isFetching) {
-    return (
-      <p>Loading...</p>
-    )
-  }
-
-  if (error || !data) {
+  if (error) {
     return (
       <p>Error: {error?.message}</p>
     )
   }
 
+  if (!userData) {
+    return <p>No user data</p>
+  }
+
   return (
     <>
-      <h1 className='text-3xl text-center'>Users Page</h1>
-      <UsersTable users={data} />
+      <h1 className='text-3xl text-center mb-8'>Users Page</h1>
+      {isFetching &&
+        <div className="absolute top-20 right-10 flex gap-2 items-center">
+          <Loader className="animate-spin" />&nbsp;
+          <span className="font-semibold">Loading...</span>
+        </div>}
+      <UsersTable users={userData} />
     </>
   )
 }

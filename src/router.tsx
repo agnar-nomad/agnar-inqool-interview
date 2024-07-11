@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         index: true,
       },
       {
-        path: "/about",
+        path: "/animals",
         element: <AnimalsPage />,
       },
     ]
