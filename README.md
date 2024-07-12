@@ -10,11 +10,11 @@ TODO:
 - [x] add React Router v6, React Query v5 and Axios
 - [x] build basic Router
 - [x] build users table UI (GET)
-- [ ] add react hook form and zod for forms
-- [ ] build out users action: add user
-- [ ] build out users action: edit user
+- [x] add react hook form and zod for forms
+- [x] build out users action: add user
+- [x] build out users action: edit user
 - [ ] build out users actions: filter table and clear filter
-- [ ] move usequery into hooks
+- [x] move usequery into hooks
 - [ ] refactor table actions to own component
 - [ ] build animals table UI (GET)
 - [ ] build out animals action: add animal

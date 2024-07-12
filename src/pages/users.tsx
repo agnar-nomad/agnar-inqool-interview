@@ -1,16 +1,13 @@
-import { useQuery } from "@tanstack/react-query"
 import UsersTable from "@/components/UsersTable"
-import { getUsers } from "@/lib/api"
 import { Loader } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { useUsers } from "@/lib/hooks";
 
 
 export default function UsersPage() {
 
-  const { data: userData, error, isFetching, status } = useQuery({
-    queryKey: ['users'],
-    queryFn: getUsers,
-    staleTime: 10 * 60 * 1000,
-  })
+  const { data: userData, error, isFetching, status } = useUsers()
 
   console.log("status", status);
 
@@ -21,7 +18,10 @@ export default function UsersPage() {
   }
 
   if (!userData) {
-    return <p>No user data</p>
+    return <p className="flex justify-center items-center gap-4">
+      <span>No user data</span>
+      <Loader className="animate-spin" />
+    </p>
   }
 
   return (
@@ -32,6 +32,12 @@ export default function UsersPage() {
           <Loader className="animate-spin" />&nbsp;
           <span className="font-semibold">Loading...</span>
         </div>}
+      <div className="flex items-center justify-between">
+        <Button variant="ghost">Seed DB</Button>
+        <Button asChild variant="outline">
+          <Link to={"new"}>Create new user</Link>
+        </Button>
+      </div>
       <UsersTable users={userData} />
     </>
   )

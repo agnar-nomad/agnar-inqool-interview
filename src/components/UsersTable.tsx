@@ -4,6 +4,7 @@ import { Pencil, RefreshCw, Trash } from "lucide-react";
 import { Button } from "./ui/button";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteUser, editUser } from "@/lib/api";
+import { Link } from "react-router-dom";
 
 
 type UsersTableProps = {
@@ -11,7 +12,6 @@ type UsersTableProps = {
 }
 
 export default function UsersTable({ users }: UsersTableProps) {
-
 
   const queryClient = useQueryClient()
 
@@ -57,7 +57,6 @@ export default function UsersTable({ users }: UsersTableProps) {
 
   return (
     <Table>
-      {/* <TableCaption>A list of your users.</TableCaption> */}
       <TableHeader>
         <TableRow className="font-bold">
           <TableHead className="">Name</TableHead>
@@ -80,9 +79,11 @@ export default function UsersTable({ users }: UsersTableProps) {
             </TableCell>
             <TableCell className="w-fit px-4">
               <div className="flex items-center gap-4 mx-auto w-fit">
-                <Button className="flex gap-2 items-center" disabled={isPendingState}>
-                  <Pencil className="w-4 h-4" />
-                  Edit
+                <Button asChild disabled={isPendingState}>
+                  <Link to={`/users/${user.id}`} className="flex gap-2 items-center">
+                    <Pencil className="w-4 h-4" />
+                    Edit
+                  </Link>
                 </Button>
                 <Button className="flex gap-2 items-center"
                   disabled={isPendingState}
