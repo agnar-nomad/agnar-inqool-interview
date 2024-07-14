@@ -21,7 +21,9 @@ export const AnimalSchema = z.object({
     .trim()
     .min(1, { message: 'Name is required' }),
   // min(1) is needed because zod will parse empty strings as valid
-  type: z.enum(animalTypes),
+  type: z.enum([...animalTypes], {
+    required_error: 'You must select an animal type',
+  }),
   age: z
     .number({ required_error: 'Age is required' })
     .min(1, { message: 'Age cannot be less than one' }),

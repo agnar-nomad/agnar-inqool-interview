@@ -40,8 +40,6 @@ export default function UserForm({ user }: { user: User | undefined }) {
   const editMutation = useMutateUser("edit")
 
   const onFormSubmit: SubmitHandler<UserSchemaType> = async (data) => {
-
-    console.log("onFormSubmit", data)
     if (user?.id) {
       editMutation.mutate({ id: user?.id, ...data })
     } else {
@@ -115,6 +113,7 @@ export default function UserForm({ user }: { user: User | undefined }) {
 
         </form>
       </Form>
+
       {isSubmitSuccessful && (<p className="font-semibold text-lg text-center text-primary">
         Thank you for your help.
       </p>)}

@@ -12,13 +12,15 @@ export const getUser =
   (id: User['id'] | 'null') => async (): Promise<User | null> => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     if (id === 'null') return new Promise((res, _) => res(null));
+    // we use this when we navigate to users/new
 
+    // we use this when we navigate to users/:id
     const { data } = await axios.get(`${inqoolEndpoint}/users/${id}`);
     return data;
   };
 
 export const editUser = async (
-  values: Partial<User> & { id: User['id'] }
+  values: Partial<User> & { id: User['id'] } // any User field can be provided but ID is a must
 ): Promise<User> => {
   const { id, ...rest } = values;
   const { data } = await axios.patch(`${inqoolEndpoint}/users/${id}`, {

@@ -20,7 +20,6 @@ const router = createBrowserRouter([
       {
         path: "/users",
         element: <UsersPage />,
-        index: true,
       },
       {
         path: "/users/new",

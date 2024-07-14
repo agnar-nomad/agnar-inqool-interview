@@ -3,8 +3,10 @@ This is a React + TS app to accomodate an implementation of the `InQool Frontend
 The app is built with Vite and a template with React, TS, Tailwind and React Router.
 The aim is to implement a simple CRUD app to fetch, add and update users and animals in a list.
 
-To start the application in development mode, run:
-`npm i && npm run dev`
+To start the application in development mode, in the root of the app:
+
+1. create a local `.env.local` file and within it add `VITE_INQOOL_ENDPOINT` and provide the API address
+2. run the command `npm i && npm run dev`
 
 TODO:
 
