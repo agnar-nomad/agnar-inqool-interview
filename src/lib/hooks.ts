@@ -1,8 +1,22 @@
-import { User } from '@/types/entities';
+import { Animal, User } from '@/types/entities';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { addUser, deleteUser, editUser, getUser, getUsers } from './api';
+import {
+  addAnimal,
+  addUser,
+  deleteAnimal,
+  deleteUser,
+  editAnimal,
+  editUser,
+  getAnimal,
+  getAnimals,
+  getUser,
+  getUsers,
+} from './api';
 import { useNavigate } from 'react-router-dom';
 
+type MutationTypes = 'delete' | 'edit' | 'create';
+
+// Users
 export const useUsers = () => {
   return useQuery({
     queryKey: ['users'],
@@ -17,8 +31,7 @@ export const useFetchUser = (id: User['id'] = 'null') => {
   });
 };
 
-type UserMutationType = 'delete' | 'edit' | 'create';
-export const useMutateUser = (type: UserMutationType) => {
+export const useMutateUser = (type: MutationTypes) => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -37,6 +50,47 @@ export const useMutateUser = (type: UserMutationType) => {
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ['users'] });
       navigate('/users');
+    },
+    onError: () => {
+      alert('Something went wrong, please try again.');
+    },
+  });
+};
+
+// Animals
+export const useAnimals = () => {
+  return useQuery({
+    queryKey: ['animals'],
+    queryFn: getAnimals,
+  });
+};
+
+export const useFetchAnimal = (id: Animal['id'] = 'null') => {
+  return useQuery({
+    queryKey: [`animal/${id}`],
+    queryFn: getAnimal(id),
+  });
+};
+
+export const useMutateAnimal = (type: MutationTypes) => {
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+
+  const mutFn =
+    type === 'delete'
+      ? deleteAnimal
+      : type === 'edit'
+      ? editAnimal
+      : type === 'create'
+      ? addAnimal
+      : undefined;
+
+  return useMutation({
+    mutationFn: mutFn,
+    onSuccess: () => {
+      // Invalidate and refetch
+      queryClient.invalidateQueries({ queryKey: ['animals'] });
+      navigate('/animals');
     },
     onError: () => {
       alert('Something went wrong, please try again.');

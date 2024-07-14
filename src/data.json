@@ -138,5 +138,139 @@
       "gender": "male",
       "banned": true
     }
+  ],
+  "animals": [
+    {
+      "id": "clyifooqy000k2823y38nyfjg",
+      "name": "Harrison",
+      "type": "dog",
+      "age": 9
+    },
+    {
+      "id": "clyifooqy000l2823fhjrhfdf",
+      "name": "Layne",
+      "type": "cat",
+      "age": 16
+    },
+    {
+      "id": "clyifooqy000m28237eem2omm",
+      "name": "Gia",
+      "type": "dog",
+      "age": 11
+    },
+    {
+      "id": "clyifooqy000n2823vt7s5ea4",
+      "name": "Alfredo",
+      "type": "other",
+      "age": 8
+    },
+    {
+      "id": "clyifooqy000o2823e6k0yf3d",
+      "name": "Rodrigo",
+      "type": "dog",
+      "age": 5
+    },
+    {
+      "id": "clyifooqy000p2823d60qjhcl",
+      "name": "Amely",
+      "type": "other",
+      "age": 19
+    },
+    {
+      "id": "clyifooqy000q2823j6awnhf1",
+      "name": "Efrain",
+      "type": "other",
+      "age": 18
+    },
+    {
+      "id": "clyifooqy000r2823m06kltxs",
+      "name": "Christophe",
+      "type": "cat",
+      "age": 1
+    },
+    {
+      "id": "clyifooqy000s2823ajydjyr4",
+      "name": "Selena",
+      "type": "other",
+      "age": 14
+    },
+    {
+      "id": "clyifooqy000t2823s62wn74r",
+      "name": "Lenora",
+      "type": "other",
+      "age": 6
+    },
+    {
+      "id": "clyifooqy000u2823ex6igq48",
+      "name": "Maryjane",
+      "type": "other",
+      "age": 11
+    },
+    {
+      "id": "clyifooqy000v28235oyb1hxy",
+      "name": "Duane",
+      "type": "other",
+      "age": 14
+    },
+    {
+      "id": "clyifooqy000w2823dywxd9w7",
+      "name": "Elliot",
+      "type": "dog",
+      "age": 13
+    },
+    {
+      "id": "clyifooqy000x2823tpnh0d14",
+      "name": "Jaleel",
+      "type": "other",
+      "age": 14
+    },
+    {
+      "id": "clyifooqy000y2823ek74q9ol",
+      "name": "Giovanny",
+      "type": "other",
+      "age": 7
+    },
+    {
+      "id": "clyifooqy000z2823pn90a5f2",
+      "name": "Zoe",
+      "type": "other",
+      "age": 1
+    },
+    {
+      "id": "clyifooqy00102823bortrxlc",
+      "name": "Waldo",
+      "type": "other",
+      "age": 1
+    },
+    {
+      "id": "clyifooqy00112823yg10q2qw",
+      "name": "Twila",
+      "type": "dog",
+      "age": 10
+    },
+    {
+      "id": "clyifooqy00122823ad26vti3",
+      "name": "Shany",
+      "type": "cat",
+      "age": 15
+    },
+    {
+      "id": "clyifooqy00132823q2sfc5rv",
+      "name": "Everardo",
+      "type": "dog",
+      "age": 3
+    },
+    {
+      "id": "clyiftjrz0001c3xi2lhbd6g3",
+      "name": "NNK",
+      "type": "other",
+      "age": 0
+    },
+    {
+      "id": "clyiftkny0014282323rs9arn",
+      "name": "NNK",
+      "type": "other",
+      "age": 0
+    }
   ]
 }

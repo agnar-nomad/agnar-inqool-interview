@@ -39,7 +39,7 @@ export default function UsersTableFilters({ handleChange, resetFilters, filters 
       <div>
         <Label>User Status</Label>
         <Select onValueChange={onSelectChange} value={bannedFilterValue}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[200px]">
             <SelectValue placeholder="User Status" />
           </SelectTrigger>
           <SelectContent>

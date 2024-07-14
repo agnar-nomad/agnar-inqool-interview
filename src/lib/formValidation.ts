@@ -26,7 +26,7 @@ export const AnimalSchema = z.object({
   }),
   age: z
     .number({ required_error: 'Age is required' })
-    .min(1, { message: 'Age cannot be less than one' }),
+    .min(0, { message: 'Age cannot be a negative number' }),
 });
 
 export type AnimalSchemaType = z.infer<typeof AnimalSchema>;

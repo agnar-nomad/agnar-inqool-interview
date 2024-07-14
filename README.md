@@ -21,10 +21,10 @@ TODO:
 - [x] build out users actions: filter table and clear filter
 - [x] move usequery into hooks
 - [x] refactor table actions to own component
-- [ ] build animals table UI (GET)
+- [x] build animals table UI (GET)
 - [ ] build out animals action: add animal
 - [ ] build out animals action: edit animal
-- [ ] build out animals actions: filter table and clear filter
+- [x] build out animals actions: filter table and clear filter
 - [ ] refactor users and animals table into one table with schemas??
 - [ ] i
 - [ ] i

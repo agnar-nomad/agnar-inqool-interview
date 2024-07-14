@@ -49,3 +49,42 @@ export const getAnimals = async (): Promise<Array<Animal>> => {
   const { data } = await axios.get(`${inqoolEndpoint}/animals`);
   return data;
 };
+
+export const getAnimal =
+  (id: Animal['id'] | 'null') => async (): Promise<Animal | null> => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    if (id === 'null') return new Promise((res, _) => res(null));
+    // we use this when we navigate to animals/new
+
+    // we use this when we navigate to animals/:id
+    const { data } = await axios.get(`${inqoolEndpoint}/animals/${id}`);
+    return data;
+  };
+
+export const editAnimal = async (
+  values: Partial<Animal> & { id: Animal['id'] } // any Animal field can be provided but ID is a must
+): Promise<Animal> => {
+  const { id, ...rest } = values;
+  const { data } = await axios.patch(`${inqoolEndpoint}/animals/${id}`, {
+    ...rest,
+  });
+
+  return data;
+};
+
+export const addAnimal = async (values: Partial<Animal>): Promise<Animal> => {
+  const { data } = await axios.post(`${inqoolEndpoint}/animals`, {
+    ...values,
+  });
+
+  return data;
+};
+
+export const deleteAnimal = async ({
+  id,
+}: {
+  id: Animal['id'];
+}): Promise<Animal> => {
+  const { data } = await axios.delete(`${inqoolEndpoint}/animals/${id}`);
+  return data;
+};
