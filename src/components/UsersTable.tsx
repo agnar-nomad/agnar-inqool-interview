@@ -1,12 +1,9 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import { User } from "@/types/entities";
-import { Pencil, RefreshCw, Trash } from "lucide-react";
-import { useMutateUser } from "@/lib/hooks";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
-import { Button } from "./ui/button";
 import UsersTableFilters from "./UsersTableFilters";
 import { cn } from "@/lib/utils";
+import UsersTableActions from "./UsersTableActions";
 
 type UsersTableProps = {
   users: User[],
@@ -41,30 +38,6 @@ export default function UsersTable({ users }: UsersTableProps) {
       banned: null
     }))
   }
-
-  // Mutations
-  const editUserMutation = useMutateUser("edit")
-
-  const deleteUserMutation = useMutateUser("delete")
-
-  // Event handlers
-  const handleChangeStatus = (id: User["id"]) => {
-    const user = users?.find(user => user.id === id);
-    if (user) {
-      editUserMutation.mutate({
-        id,
-        banned: !user.banned
-      })
-    }
-  }
-
-  const handleDeleteUser = (id: User["id"]) => {
-    if (confirm("Are you sure to delete this user? The action is irreversible.")) {
-      deleteUserMutation.mutate({ id })
-    }
-  }
-
-  const isPendingState = editUserMutation.isPending || deleteUserMutation.isPending
 
   const usersFiltered = useMemo(() => users.filter(user => {
 
@@ -108,29 +81,7 @@ export default function UsersTable({ users }: UsersTableProps) {
                 }
               </TableCell>
               <TableCell className="w-fit px-4">
-                <div className="flex items-center gap-4 mx-auto w-fit">
-                  <Button asChild disabled={isPendingState}>
-                    <Link to={`/users/${user.id}`} className="flex gap-2 items-center">
-                      <Pencil className="w-4 h-4" />
-                      Edit
-                    </Link>
-                  </Button>
-                  <Button className="flex gap-2 items-center"
-                    disabled={isPendingState}
-                    onClick={() => handleChangeStatus(user.id)}
-                  >
-                    <RefreshCw className="w-4 h-4" />
-                    Status
-                  </Button>
-                  <Button variant="destructive"
-                    disabled={isPendingState}
-                    className="flex gap-2 items-center"
-                    onClick={() => handleDeleteUser(user.id)}
-                  >
-                    <Trash className="w-4 h-4" />
-                    Delete
-                  </Button>
-                </div>
+                <UsersTableActions userId={user.id} users={usersFiltered} />
               </TableCell>
             </TableRow>
           ))}

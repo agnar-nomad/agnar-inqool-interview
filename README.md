@@ -3,6 +3,9 @@ This is a React + TS app to accomodate an implementation of the `InQool Frontend
 The app is built with Vite and a template with React, TS, Tailwind and React Router.
 The aim is to implement a simple CRUD app to fetch, add and update users and animals in a list.
 
+To start the application in development mode, run:
+`npm i && npm run dev`
+
 TODO:
 
 - [x] bootstrap with Vite, TS, React, ES Lint
@@ -13,9 +16,9 @@ TODO:
 - [x] add react hook form and zod for forms
 - [x] build out users action: add user
 - [x] build out users action: edit user
-- [ ] build out users actions: filter table and clear filter
+- [x] build out users actions: filter table and clear filter
 - [x] move usequery into hooks
-- [ ] refactor table actions to own component
+- [x] refactor table actions to own component
 - [ ] build animals table UI (GET)
 - [ ] build out animals action: add animal
 - [ ] build out animals action: edit animal
