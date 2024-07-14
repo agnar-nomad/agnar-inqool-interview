@@ -1,0 +1,142 @@
+{
+  "users": [
+    {
+      "id": "clyifoocw00032823j3q25sya",
+      "name": "Willard Schuster",
+      "gender": "female",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw0006282353mobpbg",
+      "name": "Kyle Thiel",
+      "gender": "male",
+      "banned": true
+    },
+    {
+      "id": "clyifoocw000728238c4dxubc",
+      "name": "Dr. Wilbert Schuster",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw00082823ldncj8yn",
+      "name": "Penny Senger",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw00092823rbi2xinm",
+      "name": "Kelly Doyle",
+      "gender": "female",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000b28238d1ad511",
+      "name": "Pat Kuhic",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000c2823surnadix",
+      "name": "Dale Roob",
+      "gender": "female",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000d2823atqv4t25",
+      "name": "Lee Anderson-Heller Jr.",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000e2823saoi90m5",
+      "name": "Carlos Brekke",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000f282339u7v427",
+      "name": "Trevor Schamberger",
+      "gender": "female",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000g28238x3l0wqp",
+      "name": "Opal Donnelly",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000h282313hlhl0v",
+      "name": "Tommie Hessel Sr.",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000i2823arfw8l00",
+      "name": "Kristie Weber",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw000j2823l2m2fx0z",
+      "name": "Louise Harber",
+      "gender": "female",
+      "banned": false
+    },
+    {
+      "id": "clyifoocv000028234ysiiz19",
+      "name": "Dr. Darrell Mohrr",
+      "gender": "female",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw00012823upebinzj",
+      "name": "Antonio McClure",
+      "gender": "female",
+      "banned": true
+    },
+    {
+      "id": "clyifs0bz0000c3xi6ixsrpru",
+      "name": "John IV.",
+      "gender": "other",
+      "banned": false
+    },
+    {
+      "id": "clyig46y2001528237d4is25n",
+      "name": "Leela",
+      "gender": "female",
+      "banned": false
+    },
+    {
+      "id": "clyifoocw00022823ntpjn2hf",
+      "name": "Dr. Fannie Konopelski",
+      "gender": "male",
+      "banned": true
+    },
+    {
+      "id": "clyifoocw00042823agucx2ps",
+      "name": "Stacey Kovacek",
+      "gender": "female",
+      "banned": false
+    },
+    {
+      "id": "clyipb4j40000i631ono59a94",
+      "name": "Agnar Nomad",
+      "gender": "male",
+      "banned": false
+    },
+    {
+      "id": "clyipeqd50001i6312hv1si4v",
+      "name": "Helen Bower",
+      "gender": "female",
+      "banned": true
+    },
+    {
+      "id": "clyifoocw00052823qu0ormwi",
+      "name": "Laura Schimmel",
+      "gender": "male",
+      "banned": true
+    }
+  ]
+}

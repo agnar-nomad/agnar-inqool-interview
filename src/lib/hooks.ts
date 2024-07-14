@@ -31,8 +31,6 @@ export const useMutateUser = (type: UserMutationType) => {
       ? addUser
       : undefined;
 
-  console.log('type is', type, 'fn is', mutFn);
-
   return useMutation({
     mutationFn: mutFn,
     onSuccess: () => {

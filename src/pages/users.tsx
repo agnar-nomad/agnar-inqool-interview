@@ -1,15 +1,12 @@
 import UsersTable from "@/components/UsersTable"
 import { Loader } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { useUsers } from "@/lib/hooks";
+import AboveTableActions from "@/components/common/AboveTableActions";
 
 
 export default function UsersPage() {
 
-  const { data: userData, error, isFetching, status } = useUsers()
-
-  console.log("status", status);
+  const { data: userData, error, isFetching } = useUsers()
 
   if (error) {
     return (
@@ -32,12 +29,7 @@ export default function UsersPage() {
           <Loader className="animate-spin" />&nbsp;
           <span className="font-semibold">Loading...</span>
         </div>}
-      <div className="flex items-center justify-between">
-        <Button variant="ghost">Seed DB</Button>
-        <Button asChild variant="outline">
-          <Link to={"new"}>Create new user</Link>
-        </Button>
-      </div>
+      <AboveTableActions />
       <UsersTable users={userData} />
     </>
   )
