@@ -13,8 +13,6 @@ export default function UsersEditPage() {
 
   const user = useFetchUser(id)
 
-  console.log("user", user, user.data, user.error);
-
   const userData = user.isSuccess && user.data ? user.data : undefined
 
   return (

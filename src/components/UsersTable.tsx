@@ -49,7 +49,6 @@ export default function UsersTable({ users }: UsersTableProps) {
 
   return (
     <>
-      {JSON.stringify(filters, null, 4)}
       <UsersTableFilters
         handleChange={handleFilterChange}
         resetFilters={handleResetFilters}

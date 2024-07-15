@@ -12,8 +12,6 @@ export default function AnimalsEditPage() {
 
   const animal = useFetchAnimal(id)
 
-  // console.log("animal", animal, animal.data, animal.error);
-
   const animalData = animal.isSuccess && animal.data ? animal.data : undefined
 
   return (

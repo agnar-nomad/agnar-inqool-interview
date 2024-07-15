@@ -33,7 +33,7 @@ export default function UserForm({ user }: { user: User | undefined }) {
     }
   )
 
-  const { formState, handleSubmit, getValues } = form
+  const { formState, handleSubmit } = form
   const { errors, isSubmitting, isSubmitSuccessful } = formState
 
   const createMutation = useMutateUser("create")
@@ -50,8 +50,6 @@ export default function UserForm({ user }: { user: User | undefined }) {
   if (Object.keys(errors).length > 0) {
     console.log('FORM ERRORS', errors);
   }
-
-  console.log("getValues", getValues());
 
   return (
     <>

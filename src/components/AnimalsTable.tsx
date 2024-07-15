@@ -48,7 +48,6 @@ export default function AnimalsTable({ animals }: AnimalsTableProps) {
 
   return (
     <>
-      {JSON.stringify(filters, null, 4)}
       <AnimalsTableFilters
         handleChange={handleFilterChange}
         resetFilters={handleResetFilters}

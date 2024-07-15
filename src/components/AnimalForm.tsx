@@ -32,7 +32,7 @@ export default function AnimalForm({ animal }: { animal: Animal | undefined }) {
     }
   )
 
-  const { formState, handleSubmit, getValues } = form
+  const { formState, handleSubmit } = form
   const { errors, isSubmitting, isSubmitSuccessful } = formState
 
   const createMutation = useMutateAnimal("create")
@@ -44,15 +44,12 @@ export default function AnimalForm({ animal }: { animal: Animal | undefined }) {
     } else {
       createMutation.mutate({ ...data, id: "" })
     }
-    console.log("data", data);
 
   }
 
   if (Object.keys(errors).length > 0) {
     console.log('FORM ERRORS', errors);
   }
-
-  console.log("getValues", getValues());
 
   return (
     <>
