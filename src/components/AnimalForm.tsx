@@ -44,7 +44,6 @@ export default function AnimalForm({ animal }: { animal: Animal | undefined }) {
     } else {
       createMutation.mutate({ ...data, id: "" })
     }
-
   }
 
   if (Object.keys(errors).length > 0) {

@@ -8,7 +8,7 @@ export default function UsersEditPage() {
 
   const params = useParams()
   const { id } = params
-  // returns id if the route includes an id, however if the route is /new, it returns undefined (because if how React Router works )
+  // returns id if the route includes an id, however if the route is /new, it returns undefined (because of how React Router works )
   // this way we can use the same page for adding OR editing a user
 
   const user = useFetchUser(id)

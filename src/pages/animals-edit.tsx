@@ -29,7 +29,8 @@ export default function AnimalsEditPage() {
         <div className="absolute top-20 right-10 flex gap-2 items-center">
           <Loader className="animate-spin" />&nbsp;
           <span className="font-semibold">Loading...</span>
-        </div>}
+        </div>
+      }
       <AnimalForm animal={animalData} />
     </>
   )

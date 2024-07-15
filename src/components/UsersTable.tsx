@@ -56,7 +56,7 @@ export default function UsersTable({ users }: UsersTableProps) {
       />
       <Table>
         <TableHeader>
-          <TableRow className="font-bold">
+          <TableRow>
             <TableHead className="">Name</TableHead>
             <TableHead className="w-[150px] text-center">Gender</TableHead>
             <TableHead className="w-[150px] text-center">Status</TableHead>

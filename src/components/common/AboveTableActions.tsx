@@ -4,7 +4,6 @@ import { useSeedDb } from "@/lib/hooks";
 import { Loader } from "lucide-react";
 
 
-
 export default function AboveTableActions() {
 
   const { mutate, isPending } = useSeedDb()
@@ -23,7 +22,7 @@ export default function AboveTableActions() {
         Seed DB
       </Button>
       <Button asChild variant="outline" disabled={isPending}>
-        <Link to={"new"} aria-disabled={isPending}>Create new entry</Link>
+        <Link to={"new"}>Create new entry</Link>
       </Button>
     </section>
   )

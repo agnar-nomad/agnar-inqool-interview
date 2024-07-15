@@ -102,7 +102,6 @@ export const useMutateAnimal = (type: MutationTypes) => {
 // SeedDB
 export const useSeedDb = () => {
   const queryClient = useQueryClient();
-  const navigate = useNavigate();
 
   return useMutation({
     mutationFn: seedDatabase,
@@ -110,7 +109,6 @@ export const useSeedDb = () => {
       // Invalidate and refetch everything
       queryClient.invalidateQueries({ queryKey: ['users'] });
       queryClient.invalidateQueries({ queryKey: ['animals'] });
-      // navigate('/animals');
     },
     onError: () => {
       alert('Something went wrong, please try again.');

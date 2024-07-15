@@ -26,6 +26,8 @@ export const AnimalSchema = z.object({
   }),
   age: z
     .string({ required_error: 'Age is required' })
+    .trim()
+    .min(1, { message: 'Age is required' })
     .refine((val) => !isNaN(parseInt(val)), {
       message: 'Age must be a valid number',
     })
