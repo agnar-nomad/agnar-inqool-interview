@@ -5,6 +5,7 @@ import UsersPage from '@/pages/users'
 import AnimalsPage from '@/pages/animals'
 import UsersEditPage from "./pages/users-edit";
 import WelcomePage from "./pages/welcome";
+import AnimalsEditPage from "./pages/animals-edit";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: "/animals",
         element: <AnimalsPage />,
+      },
+      {
+        path: "/animals/new",
+        element: <AnimalsEditPage />,
+      },
+      {
+        path: "/animals/:id",
+        element: <AnimalsEditPage />,
       },
     ]
   },

@@ -20,7 +20,7 @@ export default function UsersEditPage() {
   return (
     <>
       <h1 className='text-3xl text-center mb-8'>
-        {id ? "Edit User: " + userData?.name : "New Page"}
+        {id ? "Edit User: " + userData?.name : "New User"}
       </h1>
 
       {/* the API returns a weird 200 OK when entity not found, I think should be a 404  */}

@@ -25,8 +25,14 @@ export const AnimalSchema = z.object({
     required_error: 'You must select an animal type',
   }),
   age: z
-    .number({ required_error: 'Age is required' })
-    .min(0, { message: 'Age cannot be a negative number' }),
+    .string({ required_error: 'Age is required' })
+    .refine((val) => !isNaN(parseInt(val)), {
+      message: 'Age must be a valid number',
+    })
+    .transform((val) => parseInt(val))
+    .refine((val) => Number.isInteger(val) && val >= 0, {
+      message: 'Age cannot be a negative number',
+    }),
 });
 
 export type AnimalSchemaType = z.infer<typeof AnimalSchema>;
