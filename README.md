@@ -25,7 +25,4 @@ TODO:
 - [x] build out animals action: add animal
 - [x] build out animals action: edit animal
 - [x] build out animals actions: filter table and clear filter
-- [ ] r
-- [ ] i
-- [ ] i
-- [ ] add seed button to get new data?
+- [x] add seed button to get new data?

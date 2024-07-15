@@ -88,3 +88,11 @@ export const deleteAnimal = async ({
   const { data } = await axios.delete(`${inqoolEndpoint}/animals/${id}`);
   return data;
 };
+
+// SEED
+
+export const seedDatabase = async () => {
+  const { data } = await axios.post(`${inqoolEndpoint}/seed`);
+
+  return data;
+};

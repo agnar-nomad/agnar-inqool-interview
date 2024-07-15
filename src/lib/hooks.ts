@@ -11,6 +11,7 @@ import {
   getAnimals,
   getUser,
   getUsers,
+  seedDatabase,
 } from './api';
 import { useNavigate } from 'react-router-dom';
 
@@ -91,6 +92,25 @@ export const useMutateAnimal = (type: MutationTypes) => {
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ['animals'] });
       navigate('/animals');
+    },
+    onError: () => {
+      alert('Something went wrong, please try again.');
+    },
+  });
+};
+
+// SeedDB
+export const useSeedDb = () => {
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+
+  return useMutation({
+    mutationFn: seedDatabase,
+    onSuccess: () => {
+      // Invalidate and refetch everything
+      queryClient.invalidateQueries({ queryKey: ['users'] });
+      queryClient.invalidateQueries({ queryKey: ['animals'] });
+      // navigate('/animals');
     },
     onError: () => {
       alert('Something went wrong, please try again.');
